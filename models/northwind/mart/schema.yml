@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Dimensão de clientes.
+
+  - name: dim_employees
+    description: Dimensão de empregados.
+
+  - name: dim_products
+    description: Dimensão de produtos.
+
+  - name: dim_shippers
+    description: Dimensão de entregadores.
+
+  - name: dim_suppliers
+    description: Dimensão de fornecedores.
+
+  - name: fact_order_detail
+    description: Tabela fato de vendas.
+

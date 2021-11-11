@@ -1,16 +1,17 @@
-with 
+with
     staging as (
         select *
-        from {{ref('stg_customers')}}
-)
+        from {{ref('stg_suppliers')}}
+    )
     , transformed as (
         select
-            row_number() over (order by customer_id) as customer_sk -- auto-incremental surrogate key
-            , customer_id
+            row_number() over (order by supplier_id) as supplier_sk -- auto-incremental surrogate key
+            , supplier_id
             , country
             , city
             , fax
-            , postal_code   
+            , postal_code
+            , homepage
             , address
             , region
             , contact_name
@@ -18,6 +19,6 @@ with
             , company_name
             , contact_title
         from staging
-)
+    )
 
 select *  from transformed
